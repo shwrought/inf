@@ -9,14 +9,14 @@ local function setup(char)
     local humanoid = char:WaitForChild("Humanoid")
     local lastFakeJump = 0
 
-    -- Anti-ragdoll (opcional)
+    -- Anti-ragdoll 
     RunService.Heartbeat:Connect(function()
         if char:FindFirstChild("Ragdoll") then
             char.Ragdoll:Destroy()
         end
     end)
 
-    -- Detecta agarre y finge "estar en el aire" sin saltar visualmente
+
     RunService.Heartbeat:Connect(function()
         local now = tick()
         local isGrabbed =
