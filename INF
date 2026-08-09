@@ -31,7 +31,7 @@ local function setup(char)
             -- Forzar estado como si estuvieras en el aire
             humanoid:ChangeState(Enum.HumanoidStateType.Freefall)
 
-            print("🌀 Simulando estar en el aire (sin salto real)")
+            print("jumping")
         end
     end)
 end
