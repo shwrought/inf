@@ -38,7 +38,7 @@ local function setup(char)
 		end
 	end)
 
-	-- Mantener tu grab activo cuando te agarran (sin animación de caída ni volar)
+	-- Mantener tu grab activo cuando te agarran (80% de probabilidad)
 	RunService.Heartbeat:Connect(function()
 		local isGrabbed =
 			humanoidRootPart:FindFirstChildWhichIsA("AlignPosition") or
@@ -47,8 +47,7 @@ local function setup(char)
 			humanoidRootPart:FindFirstChildWhichIsA("BodyMover") or
 			humanoidRootPart:FindFirstChildWhichIsA("AlignOrientation")
 
-		if isGrabbed then
-			-- Solo corregimos el estado sin forzar Freefall constante
+		if isGrabbed and math.random() < 0.8 then
 			humanoid.PlatformStand = false
 			if humanoid:GetState() == Enum.HumanoidStateType.Physics or 
 			   humanoid:GetState() == Enum.HumanoidStateType.Ragdoll then
