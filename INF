@@ -47,7 +47,7 @@ local function setup(char)
 			humanoidRootPart:FindFirstChildWhichIsA("BodyMover") or
 			humanoidRootPart:FindFirstChildWhichIsA("AlignOrientation")
 
-		if isGrabbed and math.random() < 0.8 then
+		if isGrabbed and math.random() < 0.6 then
 			humanoid.PlatformStand = false
 			if humanoid:GetState() == Enum.HumanoidStateType.Physics or 
 			   humanoid:GetState() == Enum.HumanoidStateType.Ragdoll then
